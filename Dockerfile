@@ -1,5 +1,7 @@
 FROM maven:alpine as build
 
+COPY . .
+
 RUN mvn clean install
 
 FROM maven:alpine
