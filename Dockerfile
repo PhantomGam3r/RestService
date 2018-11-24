@@ -1,7 +1,5 @@
 FROM maven/jdk-8-alpine as build
 
-RUN git clone https://github.com/PhantomGam3r/RestService.git
-
 RUN mvn clean install
 
 FROM maven/jdk-8-alpine
