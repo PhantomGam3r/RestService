@@ -1,8 +1,8 @@
-FROM maven:jdk-8-alpine as build
+FROM maven:alpine as build
 
 RUN mvn clean install
 
-FROM maven:jdk-8-alpine
+FROM maven:alpine
 
 COPY --from=build target/demo-0.0.1-SNAPSHOT.jar .
 
