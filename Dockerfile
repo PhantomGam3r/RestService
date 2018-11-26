@@ -4,12 +4,10 @@ COPY . .
 
 RUN mvn clean install
 
-FROM maven:alpine
+FROM openjdk:8-alpine
 
-COPY --from=build target/demo-0.0.1-SNAPSHOT.jar .
+COPY --from=build ./target/SpringRestService-0.0.1.jar ./target/runnable.jar
 
 EXPOSE 8080
 
-RUN [ "sh", "ls"]
-
-ENTRYPOINT  ["java -jar demo-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT  ["java", "-jar", "./target/runnable.jar"]
