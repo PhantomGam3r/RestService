@@ -1,2 +1,2 @@
-docker build -t RestService .
-docker run --name RestServiceTest RestService
+docker build -t restservice .
+docker run --name RestServiceTest restservice
